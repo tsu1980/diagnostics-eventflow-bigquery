@@ -1,0 +1,40 @@
+{
+  "inputs": [
+    {
+      "type": "Trace",
+      "traceLevel": "Warning"
+    },
+    {
+      "type": "Microsoft.Extensions.Logging"
+    },
+    {
+      "type": "EventSource",
+      "sources": [
+        {
+          "providerName": "PlayGround"
+        }
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "type": "StdOutput"
+    },
+    {
+      "type": "BigQuery",
+      "projectId": "<projectId>",
+      "datasetId": "<datasetId>",
+      "tableId": "playground_{yyyyMMdd}",
+      "tableSchemaFile": ".\\tableSchema.json",
+      "autoCreateTable": true
+    }
+  ],
+  "schemaVersion": "2016-08-11",
+  "extensions": [
+    {
+      "category": "outputFactory",
+      "type": "BigQuery",
+      "qualifiedTypeName": "Mamemaki.EventFlow.Outputs.BigQuery.BigQueryOutputFactory, Mamemaki.EventFlow.Outputs.BigQuery"
+    }
+  ]
+}

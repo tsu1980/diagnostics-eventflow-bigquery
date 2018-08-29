@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Timestamp",
+    "type": "TIMESTAMP",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "Message",
+    "type": "STRING",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "UserId",
+    "type": "INTEGER",
+    "description": "User ID"
+  },
+  {
+    "name": "MachineName",
+    "type": "STRING",
+    "description": "Machine name"
+  },
+  {
+    "name": "TaskName",
+    "type": "STRING",
+    "description": "Task name"
+  }
+]

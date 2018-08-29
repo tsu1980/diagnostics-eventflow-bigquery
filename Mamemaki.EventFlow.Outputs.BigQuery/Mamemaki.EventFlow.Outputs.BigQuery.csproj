@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageTags>Microsoft Diagnostics EventFlow Outputs BigQuery</PackageTags>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Version>1.0.0</Version>
+    <PackageProjectUrl>https://github.com/tsu1980/diagnostics-eventflow-bigquery</PackageProjectUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Tsuyoshi Sumiyoshi</Authors>
+    <Description>A custom output for Microsoft.Diagnostics.EventFlow to insert events into Google BigQuery</Description>
+    <PackageReleaseNotes>Initial version</PackageReleaseNotes>
+    <PackageLicenseUrl>https://github.com/tsu1980/diagnostics-eventflow-bigquery/blob/master/LICENSE.txt</PackageLicenseUrl>
+    <PackageIconUrl>https://github.com/tsu1980/diagnostics-eventflow-bigquery/raw/master/images/logo.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/tsu1980/diagnostics-eventflow-bigquery</RepositoryUrl>
+    <Copyright>Copyright (c) 2018, Tsuyoshi Sumiyoshi and collaborators. All rights reserved</Copyright>
+    <Company />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Cloud.BigQuery.V2" Version="1.2.0" />
+    <PackageReference Include="Microsoft.Diagnostics.EventFlow.Core" Version="1.4.4" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotNet.Extensions.FileProviders" Version="2.2.1" />
+    <PackageReference Include="Microsoft.Diagnostics.EventFlow.Inputs.EventSource" Version="1.4.2" />
+    <PackageReference Include="Microsoft.Diagnostics.EventFlow.Inputs.MicrosoftLogging" Version="1.4.0" />
+    <PackageReference Include="Microsoft.Diagnostics.EventFlow.Inputs.Trace" Version="1.4.1" />
+    <PackageReference Include="Microsoft.Diagnostics.EventFlow.Outputs.StdOutput" Version="1.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mamemaki.EventFlow.Outputs.BigQuery\Mamemaki.EventFlow.Outputs.BigQuery.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="eventFlowConfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="tableSchema.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
