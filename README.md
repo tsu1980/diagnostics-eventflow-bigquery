@@ -108,7 +108,7 @@ Parameter  | Description | Required(default)
 `tableId` | Table id of Google BigQuery. The string enclosed in brackets can be expanded through DateTime.Format(). e.g. "accesslog_{yyyyMMdd}" => accesslog_20181231 | Yes
 `autoCreateTable` | If set true, check table exsisting and create table dynamically. see [Dynamic table creating](#dynamic-table-creating). | No(false)
 `tableSchemaFile` | Json file that define Google BigQuery table schema. | Yes
-`insertIdFieldName` | The field name of InsertId. If set `%uuid%` generate uuid each time. if not set InsertId will not set. see [Specifying insertId property](#specifying-insertId-property). | No(null)
+`insertIdFieldName` | The field name of InsertId. If set `%uuid%` generate uuid each time. if not set InsertId will not set. see [Specifying insertId property](#specifying-insertid-property). | No(null)
 
 See [Quota policy](https://cloud.google.com/bigquery/streaming-data-into-bigquery#quota)
 a section in the Google BigQuery document.
