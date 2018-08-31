@@ -14,12 +14,12 @@ The general flow of the process:
 
 To quickly get started, you can create a simple console application in VisualStudio as described below or just download and run [PlayGround](PlayGround) project.
 
-0. Preparing setup to use BigQuery
+### 0. Preparing setup to use BigQuery
 
 - Prepare Dataset. See [Creating and Using Datasets](https://cloud.google.com/bigquery/docs/datasets)
-- Prepare ServiceAccount and set private key json file path to `GOOGLE_APPLICATION_CREDENTIALS` environment variable. See [Authentication](#Authentication)
+- Prepare ServiceAccount and set private key json file path to `GOOGLE_APPLICATION_CREDENTIALS` environment variable. See [Authentication](#authentication)
 
-1. Install NuGet packages
+### 1. Install NuGet packages
 
 ```powershell
 PM> Install-Package Microsoft.Diagnostics.EventFlow.Inputs.Trace
@@ -27,7 +27,8 @@ PM> Install-Package Mamemaki.EventFlow.Outputs.BigQuery
 PM> Install-Package Microsoft.Diagnostics.EventFlow.Outputs.StdOutput
 ```
 
-2. Add a JSON file named "eventFlowConfig.json" to your project and set the Build Action property of the file to "Copy if Newer". Set the content of the file to the following:
+### 2. Add "eventFlowConfig.json"
+Add a JSON file named "eventFlowConfig.json" to your project and set the Build Action property of the file to "Copy if Newer". Set the content of the file to the following:
 
 ```js
 {
@@ -63,7 +64,8 @@ PM> Install-Package Microsoft.Diagnostics.EventFlow.Outputs.StdOutput
 
 Replace `projectId`, `datasetId` as your environment.
 
-3. Add a JSON file named "tableSchema.json" to your project and set the Build Action property of the file to "Copy if Newer". Set the content of the file to the following:
+### 3. Add "tableSchema.json"
+Add a JSON file named "tableSchema.json" to your project and set the Build Action property of the file to "Copy if Newer". Set the content of the file to the following:
 
 ```js
 [
@@ -80,7 +82,8 @@ Replace `projectId`, `datasetId` as your environment.
 ]
 ```
 
-4. Create an EventFlow pipeline in your application code using the code below. Run your application and see your traces in console output or in Google BigQuery.
+### 4. Create an EventFlow pipeline
+Create an EventFlow pipeline in your application code using the code below. Run your application and see your traces in console output or in Google BigQuery.
 ```csharp
     using (var pipeline = DiagnosticPipelineFactory.CreatePipeline("eventFlowConfig.json"))
     {
@@ -105,7 +108,7 @@ Parameter  | Description | Required(default)
 `tableId` | Table id of Google BigQuery. The string enclosed in brackets can be expanded through DateTime.Format(). e.g. "accesslog_{yyyyMMdd}" => accesslog_20181231 | Yes
 `autoCreateTable` | If set true, check table exsisting and create table dynamically. see [Dynamic table creating](#dynamic-table-creating). | No(false)
 `tableSchemaFile` | Json file that define Google BigQuery table schema. | Yes
-`insertIdFieldName` | The field name of InsertId. If set `%uuid%` generate uuid each time. if not set InsertId will not set. see [Specifying insertId property](#Specifying-insertId-property). | No(null)
+`insertIdFieldName` | The field name of InsertId. If set `%uuid%` generate uuid each time. if not set InsertId will not set. see [Specifying insertId property](#specifying-insertId-property). | No(null)
 
 See [Quota policy](https://cloud.google.com/bigquery/streaming-data-into-bigquery#quota)
 a section in the Google BigQuery document.
